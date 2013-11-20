@@ -1,0 +1,124 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>eCometUI</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <!-- build:css(.tmp) styles/main.css -->
+        <link rel="stylesheet" href="bower_components/bootstrap/css/bootstrap.css">
+        <link id="CSS-theme" rel="stylesheet" href="styles/themes/main.css">
+        <!-- endbuild -->
+    </head>
+    <body>
+        <!--[if lt IE 10]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div class="dropup navbar-fixed-bottom">
+          <button class="btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+            Theme
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+            <li role="presentation"><a role="menuitem" onclick="changeTheme('red');" href="#">Red</a></li>
+            <li role="presentation"><a role="menuitem" onclick="changeTheme('main');" href="#">Main</a></li>
+            <!-- <li role="presentation" class="divider"></li> -->
+          </ul>
+        </div>
+
+
+       <div>
+         <div class="well-header header" style="text-align: center;">
+           <a class="btn btn-sm btn-info btn-default pull-left" href="#">Back</a>
+           <span style="" >Facility</span>
+           <a class="btn btn-sm btn-info btn-default pull-right" href="#">Home</a>
+         </div>
+
+         <div class="content">
+           <div class="dropdown">
+
+             <div class="well well-sm" style="background-color: #f9f9ff; border: 1px #cccccc; border-style: solid;">
+               <div class="btn-heading">
+                 <h5>
+                 <span class="dropdown-toggle" style=""><b>General</b></span>
+                 <span class="caret pull-right"></span>
+                </h5>
+               </div>
+               <div id="test" style="padding: 5px" >
+                 <!--<button class="btn btn-large"-->
+                         <!--style="width:100%; color: slategrey; border: lightgrey; border-style: solid; border-width: 1px;" >Ft Lauderdale</button>-->
+                 <!--<button class="btn btn-large"-->
+                         <!--style="width:100%; color: slategrey; border: lightgrey; border-style: solid; border-width: 1px;" >Aviation</button>-->
+                 <!--<button class="btn btn-large"-->
+                         <!--style="width:100%; color: slategrey; border: lightgrey; border-style: solid; border-width: 1px;" >White Stone</button>-->
+
+                 <div class="form-group">
+                   <label class="">Address</label>
+                   <input class="form-control" type="text" />
+                 </div>
+
+                 <div class="form-group">
+                   <label class="">City</label>
+                   <input class="form-control" type="text"/>
+                 </div>
+
+                 <div class="form-group">
+                   <label class="">Building</label>
+                   <input class="form-control" type="text"/>
+                 </div>
+
+                 <div ng-if="lead.Location" class="form-group">
+                   <label class="">Location</label>
+                   <input class="form-control" type="text" />
+                 </div>
+
+                 <div class="form-group">
+                   <label class="">Latitude</label>
+                   <select class="form-control"
+                           ng-model="lead.Priority.value"
+                           ng-options="option for option in lead.Priority.options"
+                           ng-disabled="lead.Priority.readOnly">
+                   </select>
+                 </div>
+
+                 <!--<div ng-if="lead.Time_x0020_Frame" class="form-group">-->
+                   <!--<label class="">Time Frame</label>-->
+                   <!--<select class="form-control"-->
+                           <!--ng-model="lead.Time_x0020_Frame.value"-->
+                           <!--ng-options="option for option in lead.Time_x0020_Frame.options"-->
+                           <!--ng-disabled="lead.Time_x0020_Frame.readOnly" >-->
+                   <!--</select>-->
+                 <!--</div>-->
+
+               </div>
+             </div>
+
+           </div>
+         </div>
+       </div>
+
+
+        <!-- build:js scripts/vendor.js -->
+        <!-- bower:js -->
+        <script src="bower_components/jquery/jquery.js"></script>
+        <script type="text/javascript">
+            function changeTheme(name) {
+                $("#CSS-theme").attr("href", "styles/themes/"+name+".css");
+            }
+        </script>
+        <script src="bower_components/bootstrap/js/bootstrap.js"></script>
+        <!-- endbower -->
+        <!-- endbuild -->
+
+
+        <!-- build:js scripts/main.js -->
+        <script src="scripts/main.js"></script>
+        <!-- endbuild -->
+</body>
+</html>
